@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Install app</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="appinstall.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="appinstall.js" type="text/javascript"></script> 
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-expand-md bg-light">
+            <div class="container-fluid" style="display: block;">
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="d-flex mr-2">
+                            <a class="navbar-brand" href="Task-two.html">
+                                <img src="imgs/logo.svg" class="logo" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <div class="search">
+                            <a href="#" class="search-icon">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        <input type="text" class="search-input" placeholder="جستجو در بازار" name="">      
+                        </div> 
+                    </div>        
+                    <div class="col-md-6 col-sm-12">
+                        <div class="d-flex purchase">
+                            <div class="p-2">
+                                <div class="d-flex flex-column">
+                                    <div class="p-0 text-center">
+                                        <i class="material-icons inline-icon" style="font-size:30px ;">perm_identity</i>
+                                    </div>
+                                    <div class="p-0">
+                                        <button type="button" class="btn logbtn" data-bs-toggle="modal" 
+                                        href="javascript:void(0)" onclick="openLoginModal();">
+                                            ورود / ثبت نام
+                                        </button>
+                                        <!-- The Modal -->
+        <div class="modal fade Login" id="loginModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+            
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+            
+                    <!-- Modal body -->
+                    <div class="modal-body" style="padding:0;">
+                        <div class="box">
+                            <div class="content loginBox" >
+                                <div class="d-flex flex-row justify-content-center">
+                                    <div class="p-2 flex-shrink-1 num-one text-center">
+                                        <img class="img-fluid" src="imgs/appimg.png">
+                                    </div>
+                                    <div class="p-2 num-two">
+                                        <h4 class="head-two">ورود/ ثبت نام</h4>
+                                        <form action="action_page.php" class="form-one" name="myForm">
+                                            <div class="mb-2 mt-3">
+                                                <label class="label-text"><b>لطفا شماره موبایل خود را وارد کنید</b></label>
+                                                <input class="input-one" type="text" name="fname" placeholder="برای مثال 0912...." required>
+                                            </div>
+                                            <div class="mb-2 mt-3">
+                                                <label><p class="check"><input type="checkbox">&nbsp; تمامی &nbsp; <a href="#">قوانین و مقررات </a> را می پذیرم.</p></label>   
+                                            </div>
+                                            <div class="mb-2 mt-3 btn-confirm">
+                                                <input id="confirmcode" class="btn btn-warning bttn" type="submit"  value="دریافت کد تائید" onclick="loginAjax()">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content registerBox" style="display:none"> 
+                                <div class="d-flex flex-row justify-content-center" >
+                                    <div class="p-2 flex-shrink-1 number-one text-center">
+                                        <img class="img-fluid" src="imgs/appimg.png"> 
+                                    </div>
+                                    <div class="p-2 number-two">
+                                        <h4 class="head-two">ورود/ ثبت نام</h4>
+                                        <form action="action_page.php" class="form-two" name="myForm">
+                                            <div class="mb-2 mt-3">
+                                                <label class="label-text"><b>لطفا شماره موبایل خود را وارد کنید</b></label>
+                                                <input class="input-one" type="text" name="fname" placeholder="برای مثال 0912...." required>
+                                            </div>
+                                            <div class="mb-2 mt-3">
+                                                <label class="label-text"><b>لطفا رمز عبور خود را وارد کنید</b></label>
+                                                <input class="input-two" type="password" required>
+                                            </div>
+                                            <div class="mb-2 mt-3">
+                                                <label><p class="check"><input type="checkbox">&nbsp; تمامی &nbsp; <a href="#">قوانین و مقررات </a> را می پذیرم.</p></label>   
+                                            </div>
+                                            <div class="mb-2 mt-3 btn-confirm-two">
+                                                <input id="confirmcode" class="btn btn-warning bttn" type="submit"  value="دریافت کد تائید" onclick="loginAjax()">
+                                            </div>    
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            
+                                 <a class="note" href="javascript: showRegisterForm();">ثبت نام</a>
+                         
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                            
+                             <a class="note" href="javascript: showLoginForm();">ورود</a>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+
+
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="p-2">
+                                <div class="d-flex flex-column">
+                                    <div class="p-0 text-center">
+                                        <i class="material-icons inline-icon" style="font-size:30px;">business_center</i>
+                                    </div>
+                                    <div class="p-0">
+                                        <button type="button" class="btn btn-light ml-auto"> سبد خرید
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-expand-md bg-light secondnav">
+            <div class="container-fluid">
+                <div class="d-flex">
+                    <div class="dropdown" style="display:block">
+                        <a class="btn navbtn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="material-icons" style="vertical-align:bottom ;padding-left:5px">format_align_justify</i>دسته بندی ها
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                    <button type="button" class="btn navbtn"><a href="appinstall.html">نصب اپ</a></button>
+                    <button type="button" class="btn navbtn"><a href="branch.html">غرفه دار شو</a></button>
+                   
+                </div>
+            </div>
+
+        </nav>
+        <div class="viewone">
+                <div class="right-col">
+                    <h1 class="head-one">دانلود اپلیکیشن باسلام</h1>
+                    <h5 class="head-text">برای دریافت لینک دانلود مستقیم اپلیکیشن باسلام،<br />
+                         شماره موبایل خود را وارد کنید
+                         یا تصویر رو به رو را اسکن کنید.
+                    <h5>
+                    <div class="barcode-bar">
+                        <div class="inputs">
+                            <div class="input-three">
+                                <form action="#">
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" type="text" placeholder="شماره موبایل خود را وارد کنید" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-warning" id="button-addon2" type="button">ارسال لینک دانلود</button>
+                                    </div>
+                                </form>
+                                <div class="d-flex flex-row mb-3">
+                                    <div class="p-2 bd-highlight">
+                                        <a href="#">
+                                            <img src="imgs/cafe-bazar.png">
+                                        </a>
+                                        </div>
+                                    <div class="p-2 bd-highlight">
+                                        <a href="#">
+                                            <img src="imgs/google-play.png">
+                                        </a>
+                                    </div>
+                                    <div class="p-2 bd-highlight">
+                                        <a href="#">
+                                            <img src="imgs/myket.png">
+                                        </a>
+                                    </div>
+                                </div>     
+                            </div>
+                            <h6>می خواهید غرفه دار شوید؟<a href="#">&nbsp;اپلیکیشن غرفه من را دانلود کنید</a></h6>  
+                        </div>    
+                        <div class="barcode">
+                            <img src="imgs/barcode.png">
+
+                        </div>
+                    </div>    
+
+                </div>
+                <div class="left-col">
+                    <img class="img-fluid" src="imgs/moboapp.png"> 
+                </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="divone">
+                        <figure class="figure fone">
+                            <img src="imgs/appimg.png" class="figure-img">
+                            <figcaption class="figure-caption text-center"><h2>اپلیکیشن باسلام</h2></figcaption>
+                            <figcaption class="figure-caption text-center"><h4>برخی از امکانات اپلیکیشن باسلام</h4></figcaption>
+                        </figure>
+                    </div>   
+                </div>
+            </div>
+        </div>
+        <div class="advantage">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="part-one">
+                            <img src="imgs/talk.png">
+                            <p class="adv">گفت و گوی مستقیم با تولیدکننده و خرید بی واسطه</p>
+                        </div>
+                        <div class="part-one">
+                            <img src="imgs/goods.png">
+                            <p class="adv">محصولات متنوع همراه با تخفیفات خوب</p>
+                        </div>
+                    </div>    
+                    <div class="col-md-6 col-sm-12">    
+                        <div class="part-one">
+                            <img src="imgs/exp.png">
+                            <p class="adv">خواندن نظرات و استفاده از تجربیات دیگران</p>
+                        </div>
+                        <div class="part-one">
+                            <img src="imgs/compare.png">
+                            <p class="adv">مقایسه راحت درمیان محصولات مشابه</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="chamberapp">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="divone">
+                            <figure class="figure fone">
+                                <img src="imgs/chamber.png" class="figure-img">
+                                <figcaption class="figure-caption text-center chtext"><h2>اپلیکیشن غرفه من</h2></figcaption>
+                                <figcaption class="figure-caption text-center"><h4>برخی از امکانات مدیریت غرفه</h4></figcaption>
+                            </figure>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="advantage">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="part-one">
+                            <img src="imgs/talk2.png">
+                            <p class="adv">گفت و گو با مشتری ها و مدیریت آسان سفارش ها</p>
+                        </div>
+                        <div class="part-one">
+                            <img src="imgs/stats.png">
+                            <p class="adv">آمار بازدید، فروش و گزارش دقیق مالی</p>
+                        </div>
+                    </div>    
+                    <div class="col-md-6 col-sm-12">    
+                        <div class="part-one">
+                            <img src="imgs/manage.png">
+                            <p class="adv">مدیریت موجودی کالا و سفارش ها</p>
+                        </div>
+                        <div class="part-one">
+                            <img src="imgs/create.png">
+                            <p class="adv">ایجاد کوپن تخفیف و ده ها امکان دیگر</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="last-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="d-flex flex-row justify-content-center">
+                            <div class="p-2">
+                                <form action="#">
+                                    <div class="input-group mb-3">
+                                        <input class="form-control form-two" type="text" placeholder="شماره موبایل خود را وارد کنید" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-warning" id="button-addon2" type="button">ارسال لینک دانلود</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row justify-content-center mb-3">
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/cafe-bazar.png">
+                                </a>
+                                </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/google-play.png">
+                                </a>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/myket.png">
+                                </a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="apps">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 mt-3 rightcontent">
+                        <div class="rightside">
+                            <figure class="figure ftone">
+                                <img src="imgs/payment.svg"  class="figure-img contacts" style="width:70px;height:70px">
+                                <figcaption class="figure-caption text-center" style="font-size: 12px;">پرداخت امن از درگاه بانکی</figcaption>
+                            </figure>
+                            <figure class="figure ftone">
+                                <img src="imgs/returnm.svg" class="figure-img contacts" style="width:70px;height:70px">
+                                <figcaption class="figure-caption text-center" style="font-size: 12px;">7 روز ضمانت بازگشت پول</figcaption>
+                            </figure>
+                            <figure class="figure ftone">
+                                <img src="imgs/contactme.svg" class="figure-img contacts" style="width:70px;height:70px">
+                                <figcaption class="figure-caption text-center" style="font-size: 12px;">ارتباط مستقیم با آدم ها</figcaption>
+                            </figure>
+                            <figure class="figure ftone">
+                                <img src="imgs/supportme.svg" class="figure-img contacts" style="width:70px;height:70px">
+                                <figcaption class="figure-caption text-center" style="font-size: 12px;">پشتیبانی آنلاین و تلفنی</figcaption>
+                            </figure>
+                        </div>
+                    </div> 
+                    <div class="col-md-6 col-sm-12 mt-3">
+                        <div class="apptext">
+                            <h3><a href="#" class="installapp"> نصب اپلیکیشن باسلام</a></h3>
+                        </div>
+                        <div class="leftside">
+                            <div class="d-flex flex-row justify-content-center mb-3">
+                                <div class="p-2 bd-highlight text-center">
+                                    <a href="#">
+                                        <img src="imgs/cafe-bazar.png">
+                                    </a>
+                                </div>
+                                <div class="p-2 bd-highlight text-center">
+                                    <a href="#">
+                                        <img src="imgs/google-play.png">
+                                    </a>
+                                </div>
+                                <div class="p-2 bd-highlight text-center">
+                                    <a href="#">
+                                        <img src="imgs/myket.png">
+                                    </a>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="linkemail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 logobenith">
+                        <img class="img-fliud" width="100px" src="imgs/basalam.svg">
+                    </div>
+            
+                    <div class="col-md-2 col-sm-12">
+                        <h5 class="text-secondary mb-3"><a class="sticker" href="#">پشتیبانی</a></h5>
+                        <ul class="list-unstyled text-muted list">
+                            <li><a href="#">تماس با ما</a></li>
+                            <li><a href="#">پیگیری سفارش ها</a></li>
+                            <li><a href="#">پاسخ به سوالات</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <h5 class="text-secondary mb-3"><a class="sticker" href="#">باسلام</a></h5>
+                        <ul class="list-unstyled text-muted list">
+                            <li><a href="#">داستان باسلام</a></li>
+                            <li><a href="#">فرصت های شغلی</a></li>
+                            <li><a href="#">باسلام چطور کار میکند؟</a></li>
+                            <li><a href="#">قوانین و شرایط بازار</a></li>
+                        </ul>
+                
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <h5 class="text-secondary mb-3"><a class="sticker" href="#">خرید و فروش</a></h5>
+                        <ul class="list-unstyled text-muted list">
+                            <li><a href="#">فروش در باسلام</a></li>
+                            <li><a href="#">کیف پول من</a></li>
+                            <li><a href="#">مدیریت غرفه</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-12 stats">
+                        <h5 class="text-secondary mb-4">ایمیلتان را وارد کنید تا از تخفیف ها با خبر شوید:</h5>
+                        <form action="#">
+                            <div class="input-group mb-3">
+                                <input class="form-control form-two" type="text" placeholder="ایمیل" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-warning" id="button-addon2" type="button">ارسال</button>
+                            </div>
+                        </form>
+                        <div class="d-flex flex-row">
+                            <div class="pt-3">
+                                <p style="vertical-align: bottom;">ما را در شبکه های اجتماعی دنبال کنید</p>
+                            </div>
+                            <div class="pt-2">
+                                <a href="#" class="fa fa-instagram"></a>
+                                <a href="#" class="fa fa-linkedin"></a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <section class="section-1">
+                        <h4 class="ftext">باسلام، بازار بی مرز</h4>
+                        <p>یک بازار برای خرید و فروش محصولات مختلف با کیفیت و قیمت‌های متفاوته.
+                             باسلام مجموعه‌ای از بازارهای بزرگ همه‌ی شهرهاست اما اینترنتی. بازار تجریش و بازار بزرگ سیستان در باسلام کنار هم چیده شده. این‌جا با فروشندها و خریدارهای واقعی سروکار داری؛
+                             نه انبارهای درندشت و بزرگ، چون باسلام بازار آدم‌هاست. هر محصولی که دنبالش بگردی توی این بازار هم عمده هم تکی در انواع مختلف و از شهرهای مختلف پیدا می‌شه.
+                              تو باسلام راه ارتباط با همه آدم‌ها مثل هر بازار دیگه بازه. تو این بازار از غرفه‌دارها خرید می‌کنی.
+                             این غرفه‌دارها از هر جایی از ایران حتی از هر جایی از جهان دارن محصولشون رو به شما می‌رسونن.
+                              امتیاز هر محصول و تجربه‌ای که مشتری‌های دیگه پای هر محصول ثبت کردن و یا گفت‌وگو با خود غرفه‌دارها و یا مشورت با خریدارهای قبلی بهت کمک می‌کنه که بتونی محصول بهتری رو انتخاب کنی.
+                            فروش در باسلام هم سخت نیست. کافیه غرفه‌ات رو ثبت کنی و محصولت رو درون غرفه‌ات بچینی تا مشتری‌ها پیدات کنن و بی‌مرز ازت خرید کنن.
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" id="show-more"><p style="padding-top:20px;font-weight:bold">نمایش بیشتر</p></a>
+                        </div>
+                    </section>
+                    <section class="section-2">
+                        <h5>تو این بازار دنبال هر چی بگردی پیدا می‌شه</h5>
+                        <p>چه وقتی که دنبال مواد غذایی مثل برنج، خوار و بار، سویا، حبوبات، قند و شکر، ماکارونی و پاستا می‌گردی یا دنبال ترشی و شور و زیتون برای رنگین کردن سفره می‌گردی یا دنبال ارده و شیره و مربا برای 
+                            صبحانه یا از عسل و فراورده‌های عسل مثل بره موم و گرده گل می‌گردی از بازار باسلام دست خالی برنمی‌گردی.
+                        </p>
+                        <p>وقتی هم دنبال لباس برای اعضای خونه‌ای، باسلام یه عالمه محصول برای انتخاب داره. هم زنانه و هم مردانه از شال و روسری زنانه تا کت و شلوار و جلیقه مردانه،
+                             هم دخترانه و پسرانه از بلوز، پیراهن و سارافون دخترانه تا شلوار، شلوارک و سرهمی پسرانه
+                             حتی برای تازه به دنیا اومده‌ها لباس زیر نوزاد و وسایل مراقبت کودک و نوزاد پیدا می‌شه.
+                        </p>
+                        <p>باسلام یه بازار بی‌مرزه پس عجیب نیست که اینجا لوازم و لباس ورزشی هم پیدا می‌شه. هم برای اونی که اهل صبحانه جمعه روی کوه هستن تجهیزات پخت و پز 
+                            مسافرتی و تجهیزات کمپینگ و کوهنوردی داره هم برای اونایی که حوصله‌ آشپزی ندارن غذای آماده و نیمه آماده داره.
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" id="show-less"><p style="padding-top:20px;font-weight:bold">نمایش کمتر</p></a>
+                        </div>
+                    </section>
+
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="flside">
+                        <div class="d-flex flex-row mb-3">
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/img1.svg">
+                                </a>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/img2.png">
+                                </a>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/img3.png">
+                                </a>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <a href="#">
+                                    <img src="imgs/img4.png">
+                                </a>
+                            </div>     
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer font-small pt-4 bg-dark">
+            <p class="footer-text">همه حقوق برای بازار باسلام است &copy; 1401</p>
+        </footer>       
+    </body>
+</html>
