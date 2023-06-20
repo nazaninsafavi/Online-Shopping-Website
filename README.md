@@ -1,2 +1,2 @@
-# Basalam-Website-Inplementation
-This project is a simulation of an Iranian website.
+# Online Shopping Website
+This website was created with the aim to provide users with an easy and user-friendly way to search and find different shopping products. This is an online shop which offers the best and the newest products to its audience and help them to find what they want. This website was built using HTML, CSS and Javascript and utilized the Bootstrap framework to enhance the design and layout. 
